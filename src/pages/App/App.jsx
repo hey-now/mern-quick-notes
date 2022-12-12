@@ -15,7 +15,6 @@ export default function App() {
 
   async function addNote(note) {
     const newNote = await notesAPI.create(note);
-    console.log(newNote);
     setNotes([...notes, newNote]);
   }
 

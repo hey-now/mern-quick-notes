@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 export default function NewNoteForm({ addNote }) {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState('');
 
   function submitAddNote(evt) {
     evt.preventDefault();
     addNote(formData);
-    setFormData({})
+    setFormData('')
   }
 
   function handleChange(evt) {
@@ -19,7 +19,7 @@ export default function NewNoteForm({ addNote }) {
       <input
         type="text"
         name="text"
-        value={formData.text || ''}
+        value={formData.text}
         onChange={handleChange}
         placeholder="New Note"
         required
