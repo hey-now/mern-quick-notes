@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import * as usersService from '../../utilities/users-service';
 import NoteItemPage from "../NoteItemPage/NoteItemPage"
+import './NoteListPage.css';
 
 export default function NoteListPage({ user, notes }) {
   return (
