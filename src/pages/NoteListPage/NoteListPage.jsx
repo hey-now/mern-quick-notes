@@ -1,7 +1,7 @@
 import NoteItemPage from "../NoteItemPage/NoteItemPage"
 import './NoteListPage.css';
 
-export default function NoteListPage({ user, notes, handleDelete }) {
+export default function NoteListPage({ user, notes, handleDelete, handleUpdateNote }) {
   return (
     <>
       <h1>All of {user.name}'s Notes</h1>

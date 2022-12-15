@@ -7,6 +7,8 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.get('/', notesCtrl.index);
 // GET /api/notes/:id
 router.get('/:id', notesCtrl.show);
+// PUT /api/notes/update/:id
+router.put('/update/:id', ensureLoggedIn, notesCtrl.updateNote);
 // POST /api/notes
 router.post('/', ensureLoggedIn, notesCtrl.create);
 // DELETE /api/notes/:id

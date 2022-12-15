@@ -15,3 +15,6 @@ export async function create(note) {
 export async function deleteNote(id) {
     return sendRequest(`${BASE_URL}/${id}`, "DELETE");
 }
+export async function updateNote(id, noteFormData) {
+    return sendRequest(`${BASE_URL}/update/${id}`, "PUT", noteFormData);
+}
