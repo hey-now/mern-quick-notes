@@ -17,6 +17,12 @@ export default function App() {
     const newNote = await notesAPI.create(note);
     setNotes([...notes, newNote]);
   }
+  async function handleDelete(id) {
+    await notesAPI.deleteNote(id);
+    const remainingNotes = notes.filter(note => note._id !== id);
+    setNotes(remainingNotes);
+  }
+
 
   useEffect(function() {
     async function getNotes() {
@@ -31,7 +37,7 @@ export default function App() {
       { user ?
           <>
           <NavBar user={user}/>
-          <NoteListPage user={user} setUser={setUser} notes={notes} />
+          <NoteListPage user={user} setUser={setUser} notes={notes} handleDelete={handleDelete} />
           <hr />
           <NewNotePage user={user} setUser={setUser} addNote={addNote} />
           </>

@@ -12,3 +12,6 @@ export async function getById(id) {
 export async function create(note) {
     return sendRequest(BASE_URL, "POST", note);
 }
+export async function deleteNote(id) {
+    return sendRequest(`${BASE_URL}/${id}`, "DELETE");
+}

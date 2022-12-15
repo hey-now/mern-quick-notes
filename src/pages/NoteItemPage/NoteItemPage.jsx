@@ -1,4 +1,4 @@
-export default function NoteItemPage({ notes }) {
+export default function NoteItemPage({ notes, handleDelete }) {
 
 
 
@@ -10,6 +10,7 @@ export default function NoteItemPage({ notes }) {
                 <span>Entered: {new Date(n.updatedAt).toLocaleDateString()}</span>
                 &nbsp; -- &nbsp;
                 <span>{n.text}</span>
+                <button onClick={() => handleDelete(n._id)}>Delete</button>
             </li>)         
         :
         <h3>No Notes Yet!</h3>
